@@ -1,10 +1,12 @@
-# Very short description of the package
+# Laravel Rat :rat:
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/emtiazzahid/laravel-rat.svg?style=flat-square)](https://packagist.org/packages/emtiazzahid/laravel-rat)
 [![Total Downloads](https://img.shields.io/packagist/dt/emtiazzahid/laravel-rat.svg?style=flat-square)](https://packagist.org/packages/emtiazzahid/laravel-rat)
-![GitHub Actions](https://github.com/emtiazzahid/laravel-rat/actions/workflows/main.yml/badge.svg)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+Resize all of your images in certain folder by CLI 
+
+![screenshot1.png](screenshot1.png)
+![screenshot2.png](screenshot2.png)
 
 ## Installation
 
@@ -16,8 +18,8 @@ composer require emtiazzahid/laravel-rat
 
 ## Usage
 
-```php
-// Usage description here
+```bash
+php artisan rat:run
 ```
 
 ### Testing
@@ -38,15 +40,12 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 If you discover any security related issues, please email emtiazzahid@gmail.com instead of using the issue tracker.
 
-## Credits
-
--   [emtiazzahid](https://github.com/emtiazzahid)
--   [All Contributors](../../contributors)
-
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-## Laravel Package Boilerplate
+## TODO
 
-This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).
+- Image optimization
+- Undo action
+- Image resize with model iteration
