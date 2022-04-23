@@ -2,6 +2,7 @@
 
 namespace Emtiazzahid\LaravelRat;
 
+use Emtiazzahid\LaravelRat\Console\RunRatCommand;
 use Illuminate\Support\ServiceProvider;
 
 class LaravelRatServiceProvider extends ServiceProvider
@@ -40,7 +41,9 @@ class LaravelRatServiceProvider extends ServiceProvider
             ], 'lang');*/
 
             // Registering package commands.
-            // $this->commands([]);
+             $this->commands([
+                 RunRatCommand::class
+             ]);
         }
     }
 
@@ -54,7 +57,8 @@ class LaravelRatServiceProvider extends ServiceProvider
 
         // Register the main class to use with the facade
         $this->app->singleton('laravel-rat', function () {
-            return new LaravelRat;
+            return new LaravelRat();
         });
+
     }
 }

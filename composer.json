@@ -17,8 +17,8 @@
     ],
     "require": {
         "php": "^7.4|^8.0",
-        "illuminate/support": "^8.0",
-        "ext-gd": "*"
+        "ext-gd": "*",
+        "intervention/image": "dev-master"
     },
     "require-dev": {
         "orchestra/testbench": "^6.0",
@@ -45,9 +45,11 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Emtiazzahid\\LaravelRat\\LaravelRatServiceProvider"
+                "Emtiazzahid\\LaravelRat\\LaravelRatServiceProvider",
+                "Intervention\\Image\\ImageServiceProvider"
             ],
             "aliases": {
+                "Image": "Intervention\\Image\\Facades\\Image",
                 "LaravelRat": "Emtiazzahid\\LaravelRat\\LaravelRatFacade"
             }
         }
