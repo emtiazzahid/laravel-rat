@@ -7,9 +7,6 @@ use Illuminate\Console\Command;
 
 class RunRatCommand extends Command
 {
-    protected $path = null;
-    protected $height = false;
-    protected $width = false;
     protected $laravelRat = false;
 
     protected $signature = 'rat:run';
@@ -25,16 +22,19 @@ class RunRatCommand extends Command
 
     public function handle()
     {
-        $this->path = $this->ask('Folder/File path (from root path. ex: public/images)');
+        $path = $this->ask('Folder/File path (from root path. ex: public/images)', 'public');
+        $allDir = $this->ask('Scan only that path or subdirectories also?', true);
 
-        $this->height = $this->ask('Height', false);
-        $this->width = $this->ask('Width', false);
+        $height = $this->ask('Height', false);
+        $width = $this->ask('Width', false);
 
-        $this->info('Rat going for ... ' . $this->path);
+        $this->info('Rat going inside ... ' . $path);
         try {
-            $this->laravelRat->run($this->path, $this->height, $this->width);
+            $this->laravelRat->run($path, $allDir, $height, $width);
         } catch (\Exception $exception) {
-            $this->error($exception->getMessage());
+            $this->error(' | ' . $exception->getMessage());
         }
+
+        $this->info('Rat came back home');
     }
 }
