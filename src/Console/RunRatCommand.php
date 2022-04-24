@@ -23,7 +23,7 @@ class RunRatCommand extends Command
     public function handle()
     {
         $path = $this->ask('Folder/File path (from root path. ex: public/images)', 'public');
-        $allDir = $this->ask('Scan only that path or subdirectories also? (true/false)', true);
+        $allDir = $this->ask('Scan all subdirectories? (default: true)', true);
 
         $height = $this->ask('Height (px)', false);
         $width = $this->ask('Width (px)', false);
