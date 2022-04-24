@@ -1,9 +1,10 @@
 {
     "name": "emtiazzahid/laravel-rat",
-    "description": "A package to bulk image resize in a directory or model",
+    "description": "A package to bulk image resize in a directory",
     "keywords": [
-        "emtiazzahid",
-        "laravel-rat"
+        "laravel",
+        "laravel-rat",
+        "laravel-image-optimize"
     ],
     "homepage": "https://github.com/emtiazzahid/laravel-rat",
     "license": "MIT",
@@ -16,14 +17,16 @@
         }
     ],
     "require": {
-        "php": "^7.4|^8.0",
+        "php": ">=7.2",
         "ext-gd": "*",
         "intervention/image": "dev-master"
     },
     "require-dev": {
-        "orchestra/testbench": "^6.0",
-        "phpunit/phpunit": "^9.0"
+        "orchestra/testbench-dusk": "^4|^5|^6|^7",
+        "phpunit/phpunit": "^8.5|^9.0"
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Emtiazzahid\\LaravelRat\\": "src"
